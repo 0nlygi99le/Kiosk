@@ -22,7 +22,7 @@ namespace KioskByGT.Components.Products
     public partial class ProductList : UserControl
     {
         /// <summary>
-        /// [대표 이벤트 / 외부 공개 API]
+        /// [대표 이벤트]
         /// - 외부(Form 등)는 이 이벤트 하나만 구독하면 된다.
         /// - 내부에서 카드가 몇 개 생성되든, 언제 생성되든 외부는 신경 쓸 필요 없다.
         /// - payload(전달 데이터)는 "Product"로 고정 => UI를 외부에 노출하지 않는다.
@@ -36,11 +36,6 @@ namespace KioskByGT.Components.Products
         /// [데이터 저장소 / 카드 재료 창고]
         /// - 여기에는 "Product(데이터)"가 쌓인다.
         /// - Add/Remove/Clear 같은 변경이 일어나면 CollectionChanged 이벤트가 발생한다.
-        ///
-        /// ⚠ 참고(개선 포인트):
-        /// - set 가능하면 누가 Items = 새 컬렉션으로 바꾸는 순간,
-        ///   기존 CollectionChanged 구독이 끊길 위험이 있다.
-        /// - 포트폴리오에서는 보통 get-only(Items { get; } = new();) 형태를 더 권장.
         /// </summary>
         public ObservableCollection<Product> Items { get; set; } = [];
 
