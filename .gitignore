@@ -1,0 +1,20 @@
+# ===== Visual Studio / WinForms 기본 제외 =====
+.vs/
+bin/
+obj/
+
+# 사용자 환경 파일(개인 설정) - 커밋 금지
+*.user
+*.suo
+
+# 빌드/캐시/임시 파일
+*.cache
+*.tmp
+*.log
+
+# ReSharper / Rider (있으면)
+_ReSharper*/
+.idea/
+
+# NuGet 패키지 (보통 복원 가능)
+packages/
