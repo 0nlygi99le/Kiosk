@@ -1,6 +1,6 @@
-﻿namespace KioskByGT.Components.Products
+﻿namespace KioskByGT.Components.Picks
 {
-    partial class ProductList
+    partial class PickList
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -35,31 +35,32 @@
             // 
             // roundedPanel1
             // 
+            roundedPanel1.BackColor = Color.Transparent;
             roundedPanel1.Controls.Add(flpnl);
             roundedPanel1.Dock = DockStyle.Fill;
             roundedPanel1.Location = new Point(0, 0);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Padding = new Padding(20);
-            roundedPanel1.Size = new Size(519, 617);
+            roundedPanel1.Size = new Size(492, 588);
             roundedPanel1.TabIndex = 0;
             // 
             // flpnl
             // 
-            flpnl.AutoScroll = true;
+            flpnl.BackColor = SystemColors.ButtonHighlight;
             flpnl.Dock = DockStyle.Fill;
             flpnl.Location = new Point(20, 20);
             flpnl.Name = "flpnl";
-            flpnl.Size = new Size(479, 577);
+            flpnl.Size = new Size(452, 548);
             flpnl.TabIndex = 0;
             // 
-            // ProductList
+            // PickList
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(roundedPanel1);
-            Name = "ProductList";
-            Size = new Size(519, 617);
+            Name = "PickList";
+            Size = new Size(492, 588);
             roundedPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

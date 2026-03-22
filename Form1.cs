@@ -11,7 +11,7 @@ namespace KioskByGT
 
         private void produstList1_ItemClicked(object sender, KioskByGT.Models.Product e)
         {
-
+            pickList.AddItem(e);
         }
     }
 }

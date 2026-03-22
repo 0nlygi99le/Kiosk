@@ -28,7 +28,8 @@ namespace KioskByGT.Components
         }
 
         [Category("HeaderControl")] [Description("매점 소개")]
-        [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]   // 여러줄로 텍스트 입력을 가능해주는 속성
+        // 여러줄로 텍스트 입력을 가능해주는 속성 (아래의 속성)
+        [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]   
         public string Description 
         { 
             get => lblDescription.Text;

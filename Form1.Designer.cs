@@ -39,6 +39,7 @@
             Models.Product product9 = new Models.Product();
             headerControl1 = new KioskByGT.Components.HeaderControl();
             produstList1 = new KioskByGT.Components.Products.ProductList();
+            pickList = new KioskByGT.Components.Picks.PickList();
             SuspendLayout();
             // 
             // headerControl1
@@ -47,7 +48,7 @@
             headerControl1.Dock = DockStyle.Top;
             headerControl1.Location = new Point(0, 0);
             headerControl1.Name = "headerControl1";
-            headerControl1.Size = new Size(1279, 175);
+            headerControl1.Size = new Size(1402, 175);
             headerControl1.TabIndex = 0;
             headerControl1.Title = "매점 전용 키오스크";
             // 
@@ -105,11 +106,20 @@
             produstList1.TabIndex = 1;
             produstList1.ItemClicked += produstList1_ItemClicked;
             // 
+            // pickList
+            // 
+            pickList.BackColor = Color.Transparent;
+            pickList.Location = new Point(712, 181);
+            pickList.Name = "pickList";
+            pickList.Size = new Size(678, 479);
+            pickList.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1279, 968);
+            ClientSize = new Size(1402, 965);
+            Controls.Add(pickList);
             Controls.Add(produstList1);
             Controls.Add(headerControl1);
             Name = "Form1";
@@ -121,5 +131,6 @@
 
         private Components.HeaderControl headerControl1;
         private Components.Products.ProductList produstList1;
+        private Components.Picks.PickList pickList;
     }
 }

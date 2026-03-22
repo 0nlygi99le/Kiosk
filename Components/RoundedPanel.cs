@@ -24,14 +24,34 @@ namespace KioskByGT.Components
         private Color _borederColor = Color.Black;
         private Color _innerBackgroundColor = Color.White;
 
-        //public RoundedPanel()
-        //{
-        //    Resize += RoundedPanel_Resize; 
-        //}
+        /// <summary>
+        /// [모양 깨짐(잔상/클리핑/라운드 모서리 어긋남) 방지]
+        /// - 컨트롤의 크기가 바뀌는 순간(Resize)에 다시 그리기(Invalidate)를 요청함
+        /// - Invalidate()는 "이 영역은 다시 그려야 함"을 표시하고, 이후 OnPaint 호출을 유도함
+        /// - 필수는 아니지만, 커스텀 페인팅(라운드 모서리 등)을 하는 컨트롤은
+        ///   Resize 시점마다 재그림을 보장하는 편이 안정적
+        public RoundedPanel()
+        {
+            // 컨트롤의 가로/세로 크기가 변경될 때마다 발생하는 이벤트
+            // → 크기 변경 시점에 다시 그리기를 요청하여 모양 깨짐을 예방
+            Resize += RoundedPanel_Resize;
+        }
 
+        /// <summary>
+        /// Resize 이벤트 핸들러
+        /// - 크기 변경 직후, 이전에 그린 결과는 현재 크기와 맞지 않을 수 있으므로 무효화(Invalidate)한다.
+        /// - 결과적으로 OnPaint가 다시 호출되어 새 크기에 맞춰 라운드 모서리를 재계산/재그림한다.
+        /// </summary>
         private void RoundedPanel_Resize(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            // 로직 완성 전에 "여기까지는 만들어뒀는데, 아직 로직이 비었으니(구현이 덜 되었으니) 실행되면 바로 티 나게(예외로) 알려라"
+            // → 완성 전이라 구현을 강제하려고 걸어두는 것임.
+            // → 하지만 이 상태로 실행하면 리사이즈 시마다 예외가 터져서 앱이 깨짐
+            // 로직을 완성하면 삭제시켜줌
+            // throw new NotImplementedException();
+
+            // "크기가 바뀌었으니 다시 그려라"라고 요청 -> 이후 OnPaint 호출 유도
+            Invalidate();
         }
 
         // DefaultValue: 커스텀 속성의 기본값을 명시(초기화) + 속성창에서 Reset 기준을 제공
