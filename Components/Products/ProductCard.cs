@@ -39,11 +39,11 @@ namespace KioskByGT.Components.Products
         // Price는 "계산용 데이터(decimal)"로 보관하고, Label.Text는 "표시 문자열"로만 사용(데이터/표시 분리)
         private decimal _price;
 
-        // 생성자에서 AddChickEvent 호출
+        // 생성자에서 AddClickEvent 호출
         public ProductCard()
         {
             InitializeComponent();
-            AddChickEvent(this);
+            AddClickEvent(this);
         }
 
         [Category("ProductCard"), Description("상품 ID")]
@@ -89,14 +89,14 @@ namespace KioskByGT.Components.Products
         /// 원리: 재귀의 형태로 ‘트리(부모-자식)’을 이용해 모든 컨트롤에 ‘최상위 Clicked Invoke’를 붙임
         /// </summary>
         /// <param name="parentControl"></param>
-        private void AddChickEvent(Control parentControl)
+        private void AddClickEvent(Control parentControl)
         {
             foreach (Control control in parentControl.Controls)
             {
                 control.Click += (_, __) => Clicked?.Invoke(this, this);
                 if (control.HasChildren)
                 {
-                    AddChickEvent(control);
+                    AddClickEvent(control);
                 }
             }
         }
