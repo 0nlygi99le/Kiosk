@@ -39,17 +39,11 @@ namespace KioskByGT.Components
 
         /// <summary>
         /// Resize 이벤트 핸들러
-        /// - 크기 변경 직후, 이전에 그린 결과는 현재 크기와 맞지 않을 수 있으므로 무효화(Invalidate)한다.
-        /// - 결과적으로 OnPaint가 다시 호출되어 새 크기에 맞춰 라운드 모서리를 재계산/재그림한다.
+        /// - 크기 변경 직후, 이전에 그린 결과는 현재 크기와 맞지 않을 수 있으므로 무효화(Invalidate)
+        /// - 결과적으로 OnPaint가 다시 호출되어 새 크기에 맞춰 라운드 모서리를 재계산/재그림
         /// </summary>
         private void RoundedPanel_Resize(object? sender, EventArgs e)
         {
-            // 로직 완성 전에 "여기까지는 만들어뒀는데, 아직 로직이 비었으니(구현이 덜 되었으니) 실행되면 바로 티 나게(예외로) 알려라"
-            // → 완성 전이라 구현을 강제하려고 걸어두는 것임.
-            // → 하지만 이 상태로 실행하면 리사이즈 시마다 예외가 터져서 앱이 깨짐
-            // 로직을 완성하면 삭제시켜줌
-            // throw new NotImplementedException();
-
             // "크기가 바뀌었으니 다시 그려라"라고 요청 -> 이후 OnPaint 호출 유도
             Invalidate();
         }
@@ -119,8 +113,6 @@ namespace KioskByGT.Components
 
             //5. 라운드 사각형 설계도(path): rect(영역) + radius(휘어진 정도)로 모양 결정
             GraphicsPath path =  GraphicsUtil.GetRoundedRectanglePath(rect, _borederRadius);
-
-
 
             // IDisposable → using으로 즉시 Dispose(누수 방지)
             // 6. 내부 채우기(Fill) - "배경(내부)"를 만듬

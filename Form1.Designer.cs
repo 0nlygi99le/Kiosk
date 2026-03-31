@@ -40,6 +40,7 @@
             headerControl1 = new KioskByGT.Components.HeaderControl();
             produstList1 = new KioskByGT.Components.Products.ProductList();
             pickList = new KioskByGT.Components.Picks.PickList();
+            orderSummaryControl1 = new KioskByGT.Components.OrderSummaryControl();
             SuspendLayout();
             // 
             // headerControl1
@@ -48,13 +49,15 @@
             headerControl1.Dock = DockStyle.Top;
             headerControl1.Location = new Point(0, 0);
             headerControl1.Name = "headerControl1";
-            headerControl1.Size = new Size(1402, 175);
+            headerControl1.Size = new Size(1329, 175);
             headerControl1.TabIndex = 0;
             headerControl1.Title = "매점 전용 키오스크";
             // 
             // produstList1
             // 
             produstList1.BackColor = Color.Transparent;
+            produstList1.BorderColor = Color.Silver;
+            produstList1.BorderWidth = 1;
             product1.ID = 1;
             product1.Image = Properties.Resources.apple;
             product1.Price = new decimal(new int[] { 1800, 0, 0, 0 });
@@ -102,23 +105,36 @@
             produstList1.Items.Add(product9);
             produstList1.Location = new Point(12, 181);
             produstList1.Name = "produstList1";
-            produstList1.Size = new Size(683, 775);
+            produstList1.Size = new Size(1305, 492);
             produstList1.TabIndex = 1;
             produstList1.ItemClicked += produstList1_ItemClicked;
             // 
             // pickList
             // 
             pickList.BackColor = Color.Transparent;
-            pickList.Location = new Point(712, 181);
+            pickList.BorderColor = Color.Silver;
+            pickList.BorderWidth = 1;
+            pickList.Location = new Point(12, 692);
             pickList.Name = "pickList";
-            pickList.Size = new Size(678, 479);
+            pickList.Size = new Size(942, 296);
             pickList.TabIndex = 2;
+            // 
+            // orderSummaryControl1
+            // 
+            orderSummaryControl1.BorderColor = Color.Silver;
+            orderSummaryControl1.BorderWidth = 1;
+            orderSummaryControl1.Location = new Point(960, 692);
+            orderSummaryControl1.Name = "orderSummaryControl1";
+            orderSummaryControl1.Size = new Size(357, 151);
+            orderSummaryControl1.TabIndex = 3;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1402, 965);
+            BackColor = Color.White;
+            ClientSize = new Size(1329, 1000);
+            Controls.Add(orderSummaryControl1);
             Controls.Add(pickList);
             Controls.Add(produstList1);
             Controls.Add(headerControl1);
@@ -132,5 +148,6 @@
         private Components.HeaderControl headerControl1;
         private Components.Products.ProductList produstList1;
         private Components.Picks.PickList pickList;
+        private Components.OrderSummaryControl orderSummaryControl1;
     }
 }

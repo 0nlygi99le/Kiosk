@@ -31,14 +31,19 @@ namespace KioskByGT.Components.Picks
         // PickList의 대표 이벤트
         // - 내부 PickItem들의 상태 변화가 발생 시 현재 장바구니 전체 상태를 외부(Form 등)에 전달
         public event ItemValueChangedHandler? ItemValueChanged;
+
+        //PickList의 대표 이벤트를 실제로 발생시키는 메서드
+        // - 내부 상태가 바뀌었을 때 현재 _pickItems 전체를 외부에 알림
+        private void RaiseItemValueChanged() => ItemValueChanged?.Invoke(_pickItems);
+
         public PickList()
         {
             InitializeComponent();
         }
 
-        //PickList의 대표 이벤트를 실제로 발생시키는 메서드
-        // - 내부 상태가 바뀌었을 때 현재 _pickItems 전체를 외부에 알림
-        private void RaiseItemValueChanged() => ItemValueChanged?.Invoke(_pickItems);
+        // Form UI에서 Border 변경을 위한 속성 정의
+        public Color BorderColor { get => roundedPanel1.BorederColor; set => roundedPanel1.BorederColor = value; }
+        public int BorderWidth { get => roundedPanel1.BorederWidth; set => roundedPanel1.BorederWidth = value; }
 
         public void AddItem(Product product)
         {
@@ -84,3 +89,11 @@ namespace KioskByGT.Components.Picks
             RaiseItemValueChanged();        }
     }
 }
+
+
+
+
+
+
+
+

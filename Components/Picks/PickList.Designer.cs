@@ -46,6 +46,7 @@
             // 
             // flpnl
             // 
+            flpnl.AutoScroll = true;
             flpnl.BackColor = SystemColors.ButtonHighlight;
             flpnl.Dock = DockStyle.Fill;
             flpnl.Location = new Point(20, 20);
