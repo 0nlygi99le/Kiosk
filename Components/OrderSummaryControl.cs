@@ -43,15 +43,13 @@ namespace KioskByGT.Components
         public int BorderWidth { get => roundedPanel1.BorederWidth; set => roundedPanel1.BorederWidth = value; }
 
 
-        // Count, TotalPrice의 Setter는 Form1으로부터 값을 전달 받을 것임. 
+        // 각각 Setter는 Form1으로부터 값을 전달 받을 것.
         public int Count
         {
             get { return _count; }
             set 
             { 
                 _count = value;
-
-                // lblCount.Text = _count.ToString();  -> 초기화문 따로 뺄거임. - 아래처럼 매서드 호출로 변환
                 SetlblCount();
             }
         }
@@ -62,8 +60,6 @@ namespace KioskByGT.Components
             set 
             { 
                 _totalPrice = value;
-
-                // lblTotalPrice.Text = $"{_totalPrice:#,##0}원"; -> 초기화문 따로 뺄거임.
                 SetTotalPrice();
             }
         }
