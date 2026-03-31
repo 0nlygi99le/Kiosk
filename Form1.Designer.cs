@@ -118,15 +118,18 @@
             pickList.Name = "pickList";
             pickList.Size = new Size(942, 296);
             pickList.TabIndex = 2;
+            pickList.ItemValueChanged += pickList_ItemValueChanged;
             // 
             // orderSummaryControl1
             // 
             orderSummaryControl1.BorderColor = Color.Silver;
             orderSummaryControl1.BorderWidth = 1;
+            orderSummaryControl1.Count = 0;
             orderSummaryControl1.Location = new Point(960, 692);
             orderSummaryControl1.Name = "orderSummaryControl1";
             orderSummaryControl1.Size = new Size(357, 151);
             orderSummaryControl1.TabIndex = 3;
+            orderSummaryControl1.TotalPrice = new decimal(new int[] { 0, 0, 0, 0 });
             // 
             // Form1
             // 

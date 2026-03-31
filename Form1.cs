@@ -13,5 +13,10 @@ namespace KioskByGT
         {
             pickList.AddItem(e);
         }
+
+        private void pickList_ItemValueChanged(System.Collections.Generic.List<KioskByGT.Components.Picks.PickItem> pickItems)
+        {
+
+        }
     }
 }
