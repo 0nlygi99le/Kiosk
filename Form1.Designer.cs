@@ -141,6 +141,7 @@
             roundedButton1.Name = "roundedButton1";
             roundedButton1.Size = new Size(229, 135);
             roundedButton1.TabIndex = 4;
+            roundedButton1.Text = "취소하기";
             // 
             // roundedButton2
             // 
@@ -148,8 +149,9 @@
             roundedButton2.BorderWidth = 2;
             roundedButton2.Location = new Point(1088, 849);
             roundedButton2.Name = "roundedButton2";
-            roundedButton2.Size = new Size(229, 135);
+            roundedButton2.Size = new Size(229, 134);
             roundedButton2.TabIndex = 5;
+            roundedButton2.Text = "결제하기";
             // 
             // Form1
             // 

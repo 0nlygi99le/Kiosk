@@ -39,8 +39,8 @@
             // roundedPanel1
             // 
             roundedPanel1.BackColor = Color.Transparent;
-            roundedPanel1.BorederColor = Color.LightGray;
-            roundedPanel1.BorederWidth = 1;
+            roundedPanel1.BorderColor = Color.LightGray;
+            roundedPanel1.BorderWidth = 1;
             roundedPanel1.Controls.Add(picBox);
             roundedPanel1.Controls.Add(lblTitle);
             roundedPanel1.Controls.Add(lblPrice);

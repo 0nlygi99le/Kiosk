@@ -48,8 +48,8 @@ namespace KioskByGT.Components.Products
         }
 
         // Form UI에서 Border 변경을 위한 속성 정의
-        public Color BorderColor { get=> roundedPanel1.BorederColor; set=> roundedPanel1.BorederColor = value ; }
-        public int BorderWidth { get => roundedPanel1.BorederWidth; set => roundedPanel1.BorederWidth = value; }
+        public Color BorderColor { get=> roundedPanel1.BorderColor; set=> roundedPanel1.BorderColor = value ; }
+        public int BorderWidth { get => roundedPanel1.BorderWidth; set => roundedPanel1.BorderWidth = value; }
 
         /// <summary>
         /// Items가 Add/Remove/Clear 등으로 바뀔 때 자동 호출되는 이벤트 핸들러

@@ -19,9 +19,9 @@ namespace KioskByGT.Components
     public class RoundedPanel : Panel   
     {
         // Custom properties state (기본 Panel에 없는 속성이라 내부 필드로 보관)
-        private int _borederWidth = 2;   //테두리 두께
-        private int _borederRadius = 8;   //테두리 휜 정도
-        private Color _borederColor = Color.Black;
+        private int _borderWidth = 2;   //테두리 두께
+        private int _borderRadius = 8;   //테두리 휜 정도
+        private Color _borderColor = Color.Black;
         private Color _innerBackgroundColor = Color.White;
 
         /// <summary>
@@ -51,30 +51,30 @@ namespace KioskByGT.Components
         // DefaultValue: 커스텀 속성의 기본값을 명시(초기화) + 속성창에서 Reset 기준을 제공
         [DefaultValue(2)]
         [Category("Custom RoundedPanel"), Description("테두리 두께: 값이 클수록 테두리가 두꺼워짐.")]
-        public int BorederWidth
+        public int BorderWidth
         {
-			get { return _borederWidth; }
-			set { _borederWidth = value; 
+			get { return _borderWidth; }
+			set { _borderWidth = value; 
                 Invalidate();  // '다시 그려라는 예약': 여기서는 디자이너 화면에 변경사항이 즉시 반영되도록 함.
             }
 		}
 
         [DefaultValue(8)]
         [Category("Custom RoundedPanel"), Description("모서리 둥근 정도: 값이 클수록 더 둥글어짐.")]
-        public int BorederRadius
+        public int BorderRadius
         {
-            get { return _borederRadius; }
-            set { _borederRadius = value;
+            get { return _borderRadius; }
+            set { _borderRadius = value;
                 Invalidate();
             }
         }
 
         [DefaultValue(typeof(Color),"Black")]
         [Category("Custom RoundedPanel"), Description("테두리 색상.")]
-        public Color BorederColor
+        public Color BorderColor
         {
-            get { return _borederColor; }
-            set { _borederColor = value;
+            get { return _borderColor; }
+            set { _borderColor = value;
                 Invalidate();
             }
         }
@@ -107,12 +107,12 @@ namespace KioskByGT.Components
             graphics.SmoothingMode =SmoothingMode.HighQuality;   //3. 곡선(라운드) 계단 현상 완화
 
             //4. 패널 경계 계산 (테두리 두께를 감안한 "순수 내부 사각형 영역(rect)")
-            Rectangle rect = new Rectangle(_borederWidth, _borederWidth, Width - _borederWidth * 2, Height - _borederWidth * 2);
+            Rectangle rect = new Rectangle(_borderWidth, _borderWidth, Width - _borderWidth * 2, Height - _borderWidth * 2);
 
             // graphics.DrawRectangle(new Pen(_borederColor, _borederWidth), rect);  -> 잘 그려지나 확인 코드
 
             //5. 라운드 사각형 설계도(path): rect(영역) + radius(휘어진 정도)로 모양 결정
-            GraphicsPath path =  GraphicsUtil.GetRoundedRectanglePath(rect, _borederRadius);
+            GraphicsPath path =  GraphicsUtil.GetRoundedRectanglePath(rect, _borderRadius);
 
             // IDisposable → using으로 즉시 Dispose(누수 방지)
             // 6. 내부 채우기(Fill) - "배경(내부)"를 만듬
@@ -122,7 +122,7 @@ namespace KioskByGT.Components
             }
 
             //7. 외곽선 그리기(Draw) - "테두리"를 만듬
-            using (Pen borderPen = new Pen(_borederColor, _borederWidth)) 
+            using (Pen borderPen = new Pen(_borderColor, _borderWidth)) 
             { 
                 graphics.DrawPath(borderPen, path); 
               
