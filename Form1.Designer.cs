@@ -41,6 +41,8 @@
             produstList1 = new KioskByGT.Components.Products.ProductList();
             pickList = new KioskByGT.Components.Picks.PickList();
             orderSummaryControl1 = new KioskByGT.Components.OrderSummaryControl();
+            roundedButton1 = new KioskByGT.Components.RoundedButton();
+            roundedButton2 = new KioskByGT.Components.RoundedButton();
             SuspendLayout();
             // 
             // headerControl1
@@ -116,7 +118,7 @@
             pickList.BorderWidth = 1;
             pickList.Location = new Point(12, 692);
             pickList.Name = "pickList";
-            pickList.Size = new Size(942, 296);
+            pickList.Size = new Size(832, 296);
             pickList.TabIndex = 2;
             pickList.ItemValueChanged += pickList_ItemValueChanged;
             // 
@@ -125,11 +127,29 @@
             orderSummaryControl1.BorderColor = Color.Silver;
             orderSummaryControl1.BorderWidth = 1;
             orderSummaryControl1.Count = 0;
-            orderSummaryControl1.Location = new Point(960, 692);
+            orderSummaryControl1.Location = new Point(850, 692);
             orderSummaryControl1.Name = "orderSummaryControl1";
-            orderSummaryControl1.Size = new Size(357, 151);
+            orderSummaryControl1.Size = new Size(467, 151);
             orderSummaryControl1.TabIndex = 3;
             orderSummaryControl1.TotalPrice = new decimal(new int[] { 0, 0, 0, 0 });
+            // 
+            // roundedButton1
+            // 
+            roundedButton1.BorderColor = Color.FromArgb(255, 192, 255);
+            roundedButton1.BorderWidth = 2;
+            roundedButton1.Location = new Point(850, 849);
+            roundedButton1.Name = "roundedButton1";
+            roundedButton1.Size = new Size(229, 135);
+            roundedButton1.TabIndex = 4;
+            // 
+            // roundedButton2
+            // 
+            roundedButton2.BorderColor = Color.SkyBlue;
+            roundedButton2.BorderWidth = 2;
+            roundedButton2.Location = new Point(1088, 849);
+            roundedButton2.Name = "roundedButton2";
+            roundedButton2.Size = new Size(229, 135);
+            roundedButton2.TabIndex = 5;
             // 
             // Form1
             // 
@@ -137,6 +157,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1329, 1000);
+            Controls.Add(roundedButton2);
+            Controls.Add(roundedButton1);
             Controls.Add(orderSummaryControl1);
             Controls.Add(pickList);
             Controls.Add(produstList1);
@@ -152,5 +174,7 @@
         private Components.Products.ProductList produstList1;
         private Components.Picks.PickList pickList;
         private Components.OrderSummaryControl orderSummaryControl1;
+        private Components.RoundedButton roundedButton1;
+        private Components.RoundedButton roundedButton2;
     }
 }
