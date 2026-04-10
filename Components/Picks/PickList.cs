@@ -1,4 +1,5 @@
 ﻿using KioskByGT.Models;
+using KioskByGT.Models.Receipts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,6 +88,30 @@ namespace KioskByGT.Components.Picks
             flpnl.Controls.Remove(pickItem);
 
             RaiseItemValueChanged();        }
+
+        public List<ReceiptItemData> GetReceiptItemDatas()
+        {
+            // 리턴할 때 보내줄 List정의
+            List<ReceiptItemData> returnReceipt = new List<ReceiptItemData>();
+
+            // 반복문으로 현재 장바구니의 요소를 하나씩 꺼냄
+            foreach (PickItem pickItem in _pickItems)
+            {
+                // 장바구니 요소를 ReceiptItemData로 바꿔줄 핵심 로직
+                ReceiptItemData receiptItemData = new ReceiptItemData
+                {
+                    Title = pickItem.Title,
+                    Count = pickItem.Count,
+                    Price = pickItem.DefaultPrice,
+                    SumPrice = pickItem.DefaultPrice * pickItem.Count
+                };
+
+                // 장바구니 요소 하나씩 정제한 후 returnReceipt에 넣어줌 
+                returnReceipt.Add(receiptItemData);
+            }
+
+            return returnReceipt;
+        }
     }
 }
 

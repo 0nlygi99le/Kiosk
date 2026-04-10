@@ -2,6 +2,7 @@ using KioskByGT.Components;
 using KioskByGT.Components.Picks;
 using KioskByGT.Components.Products;
 using KioskByGT.Forms;
+using KioskByGT.Models.Receipts;
 using System.ComponentModel;
 
 
@@ -56,6 +57,9 @@ namespace KioskByGT
              * 
              * 
              */
+
+            // 현재 장바구니 상태를 받아옴 
+            List<ReceiptItemData> receiptItemDatas = pickList.GetReceiptItemDatas();
         }
     }
 }
