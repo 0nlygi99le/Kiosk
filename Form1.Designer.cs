@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Models.Product product1 = new Models.Product();
-            Models.Product product2 = new Models.Product();
-            Models.Product product3 = new Models.Product();
-            Models.Product product4 = new Models.Product();
-            Models.Product product5 = new Models.Product();
-            Models.Product product6 = new Models.Product();
-            Models.Product product7 = new Models.Product();
-            Models.Product product8 = new Models.Product();
-            Models.Product product9 = new Models.Product();
+            Models.Product product10 = new Models.Product();
+            Models.Product product11 = new Models.Product();
+            Models.Product product12 = new Models.Product();
+            Models.Product product13 = new Models.Product();
+            Models.Product product14 = new Models.Product();
+            Models.Product product15 = new Models.Product();
+            Models.Product product16 = new Models.Product();
+            Models.Product product17 = new Models.Product();
+            Models.Product product18 = new Models.Product();
             headerControl1 = new KioskByGT.Components.HeaderControl();
             produstList1 = new KioskByGT.Components.Products.ProductList();
             pickList = new KioskByGT.Components.Picks.PickList();
             orderSummaryControl1 = new KioskByGT.Components.OrderSummaryControl();
-            roundedButton1 = new KioskByGT.Components.RoundedButton();
-            roundedButton2 = new KioskByGT.Components.RoundedButton();
+            roundedButtonCancel = new KioskByGT.Components.RoundedButton();
+            roundedButtonPay = new KioskByGT.Components.RoundedButton();
             SuspendLayout();
             // 
             // headerControl1
@@ -60,51 +60,51 @@
             produstList1.BackColor = Color.Transparent;
             produstList1.BorderColor = Color.Silver;
             produstList1.BorderWidth = 1;
-            product1.ID = 1;
-            product1.Image = Properties.Resources.apple;
-            product1.Price = new decimal(new int[] { 1800, 0, 0, 0 });
-            product1.Title = "사과";
-            product2.ID = 2;
-            product2.Image = Properties.Resources.chicken;
-            product2.Price = new decimal(new int[] { 20000, 0, 0, 0 });
-            product2.Title = "치킨";
-            product3.ID = 3;
-            product3.Image = Properties.Resources.cookie;
-            product3.Price = new decimal(new int[] { 1200, 0, 0, 0 });
-            product3.Title = "쿠키";
-            product4.ID = 4;
-            product4.Image = Properties.Resources.hamburger;
-            product4.Price = new decimal(new int[] { 5500, 0, 0, 0 });
-            product4.Title = "햄버거";
-            product5.ID = 5;
-            product5.Image = Properties.Resources.icecream;
-            product5.Price = new decimal(new int[] { 3500, 0, 0, 0 });
-            product5.Title = "아이스크림";
-            product6.ID = 6;
-            product6.Image = Properties.Resources.jjajang;
-            product6.Price = new decimal(new int[] { 7000, 0, 0, 0 });
-            product6.Title = "짜장면";
-            product7.ID = 7;
-            product7.Image = Properties.Resources.pizza;
-            product7.Price = new decimal(new int[] { 18000, 0, 0, 0 });
-            product7.Title = "피자";
-            product8.ID = 8;
-            product8.Image = Properties.Resources.salad;
-            product8.Price = new decimal(new int[] { 5000, 0, 0, 0 });
-            product8.Title = "샐러드";
-            product9.ID = 9;
-            product9.Image = Properties.Resources.tangsu;
-            product9.Price = new decimal(new int[] { 8000, 0, 0, 0 });
-            product9.Title = "탕수육";
-            produstList1.Items.Add(product1);
-            produstList1.Items.Add(product2);
-            produstList1.Items.Add(product3);
-            produstList1.Items.Add(product4);
-            produstList1.Items.Add(product5);
-            produstList1.Items.Add(product6);
-            produstList1.Items.Add(product7);
-            produstList1.Items.Add(product8);
-            produstList1.Items.Add(product9);
+            product10.ID = 1;
+            product10.Image = Properties.Resources.apple;
+            product10.Price = new decimal(new int[] { 1800, 0, 0, 0 });
+            product10.Title = "사과";
+            product11.ID = 2;
+            product11.Image = Properties.Resources.chicken;
+            product11.Price = new decimal(new int[] { 20000, 0, 0, 0 });
+            product11.Title = "치킨";
+            product12.ID = 3;
+            product12.Image = Properties.Resources.cookie;
+            product12.Price = new decimal(new int[] { 1200, 0, 0, 0 });
+            product12.Title = "쿠키";
+            product13.ID = 4;
+            product13.Image = Properties.Resources.hamburger;
+            product13.Price = new decimal(new int[] { 5500, 0, 0, 0 });
+            product13.Title = "햄버거";
+            product14.ID = 5;
+            product14.Image = Properties.Resources.icecream;
+            product14.Price = new decimal(new int[] { 3500, 0, 0, 0 });
+            product14.Title = "아이스크림";
+            product15.ID = 6;
+            product15.Image = Properties.Resources.jjajang;
+            product15.Price = new decimal(new int[] { 7000, 0, 0, 0 });
+            product15.Title = "짜장면";
+            product16.ID = 7;
+            product16.Image = Properties.Resources.pizza;
+            product16.Price = new decimal(new int[] { 18000, 0, 0, 0 });
+            product16.Title = "피자";
+            product17.ID = 8;
+            product17.Image = Properties.Resources.salad;
+            product17.Price = new decimal(new int[] { 5000, 0, 0, 0 });
+            product17.Title = "샐러드";
+            product18.ID = 9;
+            product18.Image = Properties.Resources.tangsu;
+            product18.Price = new decimal(new int[] { 8000, 0, 0, 0 });
+            product18.Title = "탕수육";
+            produstList1.Items.Add(product10);
+            produstList1.Items.Add(product11);
+            produstList1.Items.Add(product12);
+            produstList1.Items.Add(product13);
+            produstList1.Items.Add(product14);
+            produstList1.Items.Add(product15);
+            produstList1.Items.Add(product16);
+            produstList1.Items.Add(product17);
+            produstList1.Items.Add(product18);
             produstList1.Location = new Point(12, 181);
             produstList1.Name = "produstList1";
             produstList1.Size = new Size(1305, 492);
@@ -133,25 +133,26 @@
             orderSummaryControl1.TabIndex = 3;
             orderSummaryControl1.TotalPrice = new decimal(new int[] { 0, 0, 0, 0 });
             // 
-            // roundedButton1
+            // roundedButtonCancel
             // 
-            roundedButton1.BorderColor = Color.FromArgb(255, 192, 255);
-            roundedButton1.BorderWidth = 2;
-            roundedButton1.Location = new Point(850, 849);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(229, 135);
-            roundedButton1.TabIndex = 4;
-            roundedButton1.Text = "취소하기";
+            roundedButtonCancel.BorderColor = Color.FromArgb(255, 192, 255);
+            roundedButtonCancel.BorderWidth = 2;
+            roundedButtonCancel.Location = new Point(850, 849);
+            roundedButtonCancel.Name = "roundedButtonCancel";
+            roundedButtonCancel.Size = new Size(229, 135);
+            roundedButtonCancel.TabIndex = 4;
+            roundedButtonCancel.Text = "취소하기";
             // 
-            // roundedButton2
+            // roundedButtonPay
             // 
-            roundedButton2.BorderColor = Color.SkyBlue;
-            roundedButton2.BorderWidth = 2;
-            roundedButton2.Location = new Point(1088, 849);
-            roundedButton2.Name = "roundedButton2";
-            roundedButton2.Size = new Size(229, 134);
-            roundedButton2.TabIndex = 5;
-            roundedButton2.Text = "결제하기";
+            roundedButtonPay.BorderColor = Color.SkyBlue;
+            roundedButtonPay.BorderWidth = 2;
+            roundedButtonPay.Location = new Point(1088, 849);
+            roundedButtonPay.Name = "roundedButtonPay";
+            roundedButtonPay.Size = new Size(229, 134);
+            roundedButtonPay.TabIndex = 5;
+            roundedButtonPay.Text = "결제하기";
+            roundedButtonPay.ButtonClick += roundedButtonPay_ButtonClick;
             // 
             // Form1
             // 
@@ -159,8 +160,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1329, 1000);
-            Controls.Add(roundedButton2);
-            Controls.Add(roundedButton1);
+            Controls.Add(roundedButtonPay);
+            Controls.Add(roundedButtonCancel);
             Controls.Add(orderSummaryControl1);
             Controls.Add(pickList);
             Controls.Add(produstList1);
@@ -176,7 +177,7 @@
         private Components.Products.ProductList produstList1;
         private Components.Picks.PickList pickList;
         private Components.OrderSummaryControl orderSummaryControl1;
-        private Components.RoundedButton roundedButton1;
-        private Components.RoundedButton roundedButton2;
+        private Components.RoundedButton roundedButtonCancel;
+        private Components.RoundedButton roundedButtonPay;
     }
 }
