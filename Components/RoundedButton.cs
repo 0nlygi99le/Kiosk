@@ -16,11 +16,17 @@ using System.Windows.Forms;
 
 namespace KioskByGT.Components
 {
+    [DefaultEvent("ButtonClick")]
     public partial class RoundedButton : UserControl
     {
+        // 외부(form1)가 구독할 대표 이벤트 정의
+        public event EventHandler? ButtonClick;
         public RoundedButton()
         {
             InitializeComponent();
+
+            // 생성 시점에 내부 컨트롤의 click 이벤트를 모으는 로직 실행
+            AddButtonClick(this);
         }
 
         public Color BorderColor { get => roundedPanel1.BorderColor; set => roundedPanel1.BorderColor = value; }
@@ -44,10 +50,22 @@ namespace KioskByGT.Components
           - visible로 바꿔줌
           -> [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         */
-
-
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public override string Text { get => lblText.Text; set => lblText.Text = value; }
+
+        // ProductCard의 AddclickedEvent와 같은 개념
+        // 자신 + 내부 자식 컨트롤의 click이벤트를 모두 ButtonCliked으로 연결함.
+        private void AddButtonClick(Control parentControl)
+        {
+            // parentControl 자신 클릭 시 대표 이벤트 발행
+            parentControl.Click += (_, __) => ButtonClick?.Invoke(this, EventArgs.Empty);
+            
+            // 자식 컨트롤들에도 적용하기 위한 재귀 메서드
+            foreach(Control control in parentControl.Controls)
+            {
+                AddButtonClick(control);
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 using KioskByGT.Components;
 using KioskByGT.Components.Picks;
 using KioskByGT.Components.Products;
+using KioskByGT.Forms;
+using System.ComponentModel;
 
 
 namespace KioskByGT
@@ -38,3 +40,5 @@ namespace KioskByGT
         }
     }
 }
+
+

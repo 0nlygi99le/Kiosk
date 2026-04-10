@@ -81,7 +81,7 @@ namespace KioskByGT.Components.Picks
             lblSumPrice.Text = (_defaultPrice * _count).ToString("#,###") + "원";
         }
 
-        // Click Event
+        // [Click Event]
         private void btnDown_Click(object sender, EventArgs e)
         {
             Count--;

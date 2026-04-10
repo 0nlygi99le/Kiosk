@@ -17,6 +17,8 @@ namespace KioskByGT.Components
         /// </summary>
         private int _count;
         private decimal _totalPrice;
+
+        // 실제 화면(UI) 반영 전용 메서드 
         private void SetlblCount()
         {
             lblCount.Text = _count.ToString();
@@ -33,8 +35,12 @@ namespace KioskByGT.Components
         public OrderSummaryControl()
         {
             InitializeComponent();
+
+            /* [생성자에서 메서드 실행 이유]     
+            생성 직후의 아직 외부 값이 들어오지 않았더라도 
+            자기 내부 필드 기준으로 화면(UI)을 초기화한 상태가 됨  */
             SetlblCount();
-            SetTotalPrice();
+            SetTotalPrice(); 
 
         }
 
