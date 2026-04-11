@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(510, 684);
+            ClientSize = new Size(602, 762);
             Name = "ReceiptForm";
             Text = "ReceiptForm";
             ResumeLayout(false);
