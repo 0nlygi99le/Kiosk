@@ -59,7 +59,9 @@ namespace KioskByGT
              *     -> 먼저 영수증의 전체 모양을 데이터 모델로 정의할 것 -> ReceiptData
              *     
              * 2. ReceiptForm에게 전달 
-             * 
+             *   - form1에서 Receiptdata를 직접 만들고 넘겨줌.
+             *     (나중에 분리를 하던 일단 먼저 만듦
+             *   - ReceiptForm를 생성하고 Receiptdata를 넘겨줌.
              * 
              */
 
@@ -71,31 +73,14 @@ namespace KioskByGT
             {
                 // 
                 StoreName = "경자카야",
-                StoreDescription = "경자카야에서 주문하신 음식입니다~",
+                StoreDescription = "주문하신 음식입니다~",
                 OrderNumber = DateTime.Now.ToString("yyyyMMddHHmmss"),
                 OrderTime = DateTime.Now,
 
                 Items = receiptItemDatas,
 
-                TotalCount = receiptItemDatas.Sum(item => item.Count), // 이 람다풀 수 있나?
-                TotalPrice = receiptItemDatas.Sum((item) => item.Price),
-
-
-
-            
-
-                //                // 상단의 헤더 영역
-                //public string StoreName { get; set; } = string.Empty;
-                //public string StoreDescription { get; set; } = string.Empty;
-                //public int OrderNumber { get; set; }
-                //public int OrderTime { get; set; }
-
-                //// 중단의 상품 목록 영역
-                //List<ReceiptItemData> Items { get; set; } = new();
-
-                //// 하단의 합계 영역
-                //public int TotalCount { get; set; }
-                //public decimal TotalPrice { get; set; }
+                TotalCount = receiptItemDatas.Sum(item => item.Count), 
+                TotalPrice = receiptItemDatas.Sum((item) => item.Price),         
             };
         }
     }

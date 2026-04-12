@@ -27,7 +27,7 @@ namespace KioskByGT.Models.Receipts
 
 
         // 중단의 상품 목록 영역
-        List<ReceiptItemData> Items { get; set; } = new();
+        public List<ReceiptItemData> Items { get; set; } = new();
 
         // 하단의 합계 영역
         public int TotalCount { get; set; }
