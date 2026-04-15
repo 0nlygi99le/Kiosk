@@ -1,4 +1,6 @@
-﻿namespace KioskByGT.Components
+﻿using KioskByGT.Components.RoundedControl;
+
+namespace KioskByGT.Components
 {
     partial class RoundedButton
     {

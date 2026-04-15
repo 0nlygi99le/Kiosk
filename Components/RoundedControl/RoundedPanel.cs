@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 
 
-namespace KioskByGT.Components
+namespace KioskByGT.Components.RoundedControl
 {
     /// <summary>
     /// RoundedPanel (Custom Control)

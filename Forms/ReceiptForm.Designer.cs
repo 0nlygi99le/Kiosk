@@ -1,4 +1,6 @@
-﻿namespace KioskByGT.Forms
+﻿using KioskByGT.Components.RoundedControl;
+
+namespace KioskByGT.Forms
 {
     partial class ReceiptForm
     {
@@ -32,9 +34,10 @@
             lblDescription = new Label();
             lblOrderNumber = new Label();
             lblOrderTime = new Label();
-            flpnlItems = new KioskByGT.Components.RoundedPanel();
+            flpnlItems = new RoundedPanel();
             lblTotalCount = new Label();
             lblTotalPrice = new Label();
+            btnClose = new Button();
             SuspendLayout();
             // 
             // lblStoreName
@@ -77,8 +80,12 @@
             // 
             // flpnlItems
             // 
+            flpnlItems.BackColor = Color.Transparent;
+            flpnlItems.BorderColor = Color.Transparent;
+            flpnlItems.InnerBackgroundColorVar = Color.Transparent;
             flpnlItems.Location = new Point(8, 157);
             flpnlItems.Name = "flpnlItems";
+            flpnlItems.Padding = new Padding(20);
             flpnlItems.Size = new Size(523, 441);
             flpnlItems.TabIndex = 4;
             // 
@@ -101,11 +108,23 @@
             lblTotalPrice.TabIndex = 6;
             lblTotalPrice.Text = "lblTotalPrice";
             // 
+            // btnClose
+            // 
+            btnClose.Font = new Font("맑은 고딕", 10F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnClose.Location = new Point(208, 701);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(112, 34);
+            btnClose.TabIndex = 7;
+            btnClose.Text = "확인";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
             // ReceiptForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(540, 762);
+            Controls.Add(btnClose);
             Controls.Add(lblTotalPrice);
             Controls.Add(lblTotalCount);
             Controls.Add(flpnlItems);
@@ -125,8 +144,9 @@
         private Label lblDescription;
         private Label lblOrderNumber;
         private Label lblOrderTime;
-        private Components.RoundedPanel flpnlItems;
+        private RoundedPanel flpnlItems;
         private Label lblTotalCount;
         private Label lblTotalPrice;
+        private Button btnClose;
     }
 }

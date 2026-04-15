@@ -20,7 +20,7 @@ namespace KioskByGT
         private void produstList1_ItemClicked(object sender, KioskByGT.Models.Product e)
         {
             //ProductCard와 PickList의 중계자 역할 
-            pickList.AddItem(e);
+            pickList.AddItem(e);        
         }
 
         private void pickList_ItemValueChanged(System.Collections.Generic.List<KioskByGT.Components.Picks.PickItem> pickItems)
@@ -82,6 +82,10 @@ namespace KioskByGT
                 TotalCount = receiptItemDatas.Sum(item => item.Count), 
                 TotalPrice = receiptItemDatas.Sum((item) => item.Price),         
             };
+
+            ReceiptForm receiptForm = new ReceiptForm(receiptData);
+
+            receiptForm.ShowDialog();
         }
     }
 }

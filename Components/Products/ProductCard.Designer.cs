@@ -1,4 +1,6 @@
-﻿namespace KioskByGT.Components.Products
+﻿using KioskByGT.Components.RoundedControl;
+
+namespace KioskByGT.Components.Products
 {
     partial class ProductCard
     {

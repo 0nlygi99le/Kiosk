@@ -1,4 +1,6 @@
-﻿namespace KioskByGT.Components.Picks
+﻿using KioskByGT.Components.RoundedControl;
+
+namespace KioskByGT.Components.Picks
 {
     partial class PickList
     {

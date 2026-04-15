@@ -17,26 +17,40 @@ namespace KioskByGT.Forms
     public partial class ReceiptForm : Form
     {
         private readonly ReceiptData _receiptData;
+         
+        // 생성자에서 ReceiptData를 받는 구조임.
         public ReceiptForm(ReceiptData receiptData)
         {
             InitializeComponent();
 
+            // 받아온 ReceiptData를 ReceiptForm의 내부 저장소에 넣음
             _receiptData = receiptData;
 
+            // 폼이 실제 로드될 때 화면 채우기 실행
             Load += ReceiptForm_Load;
         }
 
         private void ReceiptForm_Load(object? sender, EventArgs e)
-        {
-            // 내부 컨트롤에 값부여
+        { 
+            // 상단, 중간, 하단의 데이터를 각각 채워서 로드 이벤트 핸들러에서 호출.
+            // 구조를 나눈 것임.
+            TopText();
+            MiddleText();
+            BottomText();
+        }
 
-            // 헤더
+        // 상단 헤더 텍스트 채우기
+        private void TopText()
+        {
             lblStoreName.Text = _receiptData.StoreName;
             lblDescription.Text = _receiptData.StoreDescription;
             lblOrderNumber.Text = $"주문번호: {_receiptData.OrderNumber}";
             lblOrderTime.Text = $"주문시간: {_receiptData.OrderTime: yyyy-MM-dd-HH.mm.ss}";
+        }
 
-
+        // 중간 결제하기 당시 장바구니 목록 동적 생성
+        private void MiddleText()
+        {
             /* 중간 계획
              [ProductList의 ProductCard 동적 생성 원리]
              - "상품 데이터 목록" -> "ProductCard 목록" 으로 바꾸어 화면에 보여주는 구조
@@ -72,21 +86,36 @@ namespace KioskByGT.Forms
              ReceiptItemControl은 ProductCard, PickItem처럼 상위 객체가 런타임에 new를 이용해서 생성
              그러나 데이터 1개를 받아 UI 1개를 채우는 표시용 컨트롤이라는 점에서 ProductCard와 더 유사. 
              PickItem은 표시 기능에 더해 수량 변경, 삭제와 같은 편집 기능을 더 지닌 컨트롤임. */
+            // 만약 이전 항목이 있다면 먼저 비움
+            flpnlItems.Controls.Clear();
 
-            // 중간
+            // 내부 저장소에 넣어뒀던 ReceiptData의 요소를 하나씩 꺼내 순회.
+            // - 각각의 꺼낸 데이터 요소를 ReceiptItemControl으로 new로 생성
             foreach (ReceiptItemData item in _receiptData.Items)
             {
+                // 한 줄 UI 생성
                 ReceiptItemControl receiptItemControl = new ReceiptItemControl();
 
+                // 생성한 한 줄 UI에 데이터 1개를 넣음.
                 receiptItemControl.SetData(item);
 
+                // 영수증 목록 패널에 추가
                 flpnlItems.Controls.Add(receiptItemControl);
             }
+        }
 
-            // 하단
+        // 하단 텍스트
+        private void BottomText()
+        {
             lblTotalCount.Text = $"총 수량: {_receiptData.TotalCount}개";
             lblTotalPrice.Text = $"총 금액: {_receiptData.TotalPrice: #,##0}원";
-        }            
+        }
+
+        // 확인 버튼을 누르면 영수증 폼 닫기.
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();    
+        }
     }
 }
 
