@@ -112,6 +112,15 @@ namespace KioskByGT.Components.Picks
 
             return returnReceipt;
         }
+
+        // 취소하기 버튼을 눌렀을 때 호출할 메서드
+        // 내부 패널, 저장소를 Clear하고, 장바구니의 내부 변화를 외부로 알림.
+        public void CancelClear()
+        {
+            _pickItems.Clear();
+            flpnl.Controls.Clear();
+            RaiseItemValueChanged();
+        }
     }
 }
 

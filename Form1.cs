@@ -20,7 +20,7 @@ namespace KioskByGT
         private void produstList1_ItemClicked(object sender, KioskByGT.Models.Product e)
         {
             //ProductCard와 PickList의 중계자 역할 
-            pickList.AddItem(e);        
+            pickList.AddItem(e);
         }
 
         private void pickList_ItemValueChanged(System.Collections.Generic.List<KioskByGT.Components.Picks.PickItem> pickItems)
@@ -79,13 +79,24 @@ namespace KioskByGT
 
                 Items = receiptItemDatas,
 
-                TotalCount = receiptItemDatas.Sum(item => item.Count), 
-                TotalPrice = receiptItemDatas.Sum((item) => item.Price),         
+                TotalCount = receiptItemDatas.Sum(item => item.Count),
+                TotalPrice = receiptItemDatas.Sum((item) => item.Price),
             };
 
             ReceiptForm receiptForm = new ReceiptForm(receiptData);
 
             receiptForm.ShowDialog();
+        }
+
+        /// <summary>
+        /// [취소하기 버튼 클릭 헨들러]
+        /// - 사용자가 취소하기 버튼을 누르면 실행될 로직
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void roundedButtonCancel_ButtonClick(object sender, EventArgs e)
+        {
+            pickList.CancelClear();
         }
     }
 }
