@@ -17,11 +17,8 @@ namespace KioskByGT
             InitializeComponent();
         }
 
-        private void produstList1_ItemClicked(object sender, KioskByGT.Models.Product e)
-        {
-            //ProductCard와 PickList의 중계자 역할 
-            pickList.AddItem(e);
-        }
+        //ProductCard와 PickList의 중계자 역할
+        private void produstList1_ItemClicked(object sender, KioskByGT.Models.Product e) => pickList.AddItem(e);
 
         private void pickList_ItemValueChanged(System.Collections.Generic.List<KioskByGT.Components.Picks.PickItem> pickItems)
         {
@@ -71,7 +68,6 @@ namespace KioskByGT
             // 영수증 전체 모양을 new로 생성
             ReceiptData receiptData = new ReceiptData
             {
-                // 
                 StoreName = "경자카야",
                 StoreDescription = "주문하신 음식입니다~",
                 OrderNumber = DateTime.Now.ToString("yyyyMMddHHmmss"),
@@ -94,10 +90,7 @@ namespace KioskByGT
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void roundedButtonCancel_ButtonClick(object sender, EventArgs e)
-        {
-            pickList.CancelClear();
-        }
+        private void roundedButtonCancel_ButtonClick(object sender, EventArgs e) => pickList.CancelClear();
     }
 }
 

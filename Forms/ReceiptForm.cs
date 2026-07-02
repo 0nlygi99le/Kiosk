@@ -99,6 +99,8 @@ namespace KioskByGT.Forms
                 // 생성한 한 줄 UI에 데이터 1개를 넣음.
                 receiptItemControl.SetData(item);
 
+                receiptItemControl.Top = flpnlItems.Controls.Count * receiptItemControl.Height;
+
                 // 영수증 목록 패널에 추가
                 flpnlItems.Controls.Add(receiptItemControl);
             }
